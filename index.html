@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Simple webpage using html, css and javscript">
+    <meta name="keywords" content="html, css, javascript">
+    <title>My first webpage &#x1F92B</title>
+    <link rel="icon" type="image/gif." href="/images/giphy.gif">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Permanent+Marker" />
+    <style>
+        body {
+            min-height: 100%;
+            --background-image: url(images/princessAeolin01.jpg);    
+            background-image: var(--background-image);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/91d13c1a24.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="grid-parent-container">
+        <header>
+            <div id="home" title="home">
+                <i class="fa-solid fa-house fa-3x"></i>
+            </div>
+            <span>
+
+            </span>
+            <div class="timer">
+                <div class="number" id="hour">
+                    <label>H</label>
+                </div>
+                <span>:</span>
+                <div class="number" id="minute" >
+                    <label>M</label>
+                </div>
+                <span>:</span>
+                <div class="number" id="second">
+                    <label>S</label>
+                </div>
+                <div id="dayOrNight">
+                    <label></label>
+                </div>
+            </div>                                                                                 
+        </header>
+        <div id="container2">
+            <div class="box1">
+                <div class="slideShow">
+                    <img id="bike" src="images/2015-k1.jpg" alt="jpg" width="150px" height="50px">
+                    
+                </div> 
+            </div>
+            <div class="box2">
+                <div id="profile-picBox">
+                    <div class="profilePic">
+                    <img src="images/image2.jpg" alt="Image" width="60px" height="75px">
+                    </div>
+                </div>
+                <div class="nameBox">
+                    <a href="portfolio.html" target="_blank" title="check profile">
+                    <div class="name">
+                        MUKTADIR     
+                    </div>
+                    </a>    
+                </div>
+                <div id="professionBox">
+                    <div class="programmer">
+                        Programmer
+                    </div>               
+                </div> 
+                
+            </div>
+        </div>
+        <div id="container3">          
+            <div id="toolbarBox">
+                <div class="wrapper">
+                    <div class="search-icon" title="search url">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <input class="searchBar" placeholder="Search" type="text" >
+                    <div class="clear-icon" title="clear text">
+                        <i class="fa-sharp fa-solid fa-x"></i>
+                    </div>
+                </div>  
+                <div id="toolbar">
+                    <div class="google">                 
+                        <a href="https://www.google.com/" title="google" target="_blank">                       
+                            <i class="fa-brands fa-google fa-2x"></i>
+                        </a>                 
+                    </div>
+                    <div class="youtube">  
+                        <a href="https://www.youtube.com/" title="youtube" target="_blank">                        
+                            <i class="fa-brands fa-youtube fa-2x"></i>
+                        </a>    
+                    </div> 
+                    <div class="amazon">
+                        <a href="https://www.amazon.in/" title="amazon" target="_blank">                         
+                            <i class="fa-brands fa-amazon fa-2x"></i>
+                        </a>   
+                    </div>  
+                </div>
+                                                                                             
+            </div>  
+            <div id="content"> 
+                <div id="myProjects">
+                    My Projects:
+                </div>               
+                <div id="projectBox">
+                    <div class="projects" id="ticTacToeGame">
+                        <i class="fa-solid fa-gamepad fa-2x"></i>
+                        <span>Tic Tac Toe</span>
+                    </div>
+                    <div class="projects">
+                        <i class="fa-solid fa-gamepad fa-2x"></i>
+                        <span>Snake Game</span>
+                    </div>
+                    <div class="projects">
+
+                    </div>
+                    <div class="projects">
+
+                    </div>
+                </div>                     
+            </div>
+            <div id="box3">
+                <div id="ticTacToeGameContainer">
+                    <span>Tic Tac Toe</span><br>
+                    <div id="cellContainer">
+                        <div cellIndex="0" class="cell"></div>
+                        <div cellIndex="1" class="cell"></div>
+                        <div cellIndex="2" class="cell"></div>
+                        <div cellIndex="3" class="cell"></div>
+                        <div cellIndex="4" class="cell"></div>
+                        <div cellIndex="5" class="cell"></div>
+                        <div cellIndex="6" class="cell"></div>
+                        <div cellIndex="7" class="cell"></div>
+                        <div cellIndex="8" class="cell"></div>
+                    </div>
+                    <span id="playersTurn"></span>>
+                    <div id="Btns">
+                        <button id="restartBtn">Restart</button>
+                        <button id="quitBtn" title="Quit game"> X</button>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        <div id="container4">
+            <span>About Me</span>
+          
+            <div >
+                <p>
+                    I'm a self-taught aspiring computer programmer, passionate about writing code and solving problems. 
+                    Everyday, I try to learn something new, something cool and dive deep into the world of programming.
+                    There's a lot to learn but I'll keep sailing until I reach where I need to be__the ultimate goal.
+                </p>
+              
+                <p>
+                    I'm a fun loving person who loves music a lot (sometimes I try to play along with my guitar). Other hobbies include- playing sports, riding bike, working out, watching anime or reading some cool mangas out there.
+                </p>
+               
+                <p>
+                    I'm looking forward to work in an organisation where I can test my skills, connect with smart-experienced people and learn from them during the process.
+                </p>
+            </div>
+            <div id="mailPhone">
+                <i class="fa-solid fa-phone "></i>
+                <b>+91-8474884459</b>         
+                <a title="send mail"  href="mailto:1996raiden27@gmail.com"><i class="fa-solid fa-envelope fa-2x "></i></a>          
+            </div>
+           
+            <!-- <div id="formBox">
+                <form action="form.html" method="get" enctype="multipart/form-data">
+                    <div class="formElement">
+                        <label for="name">Name:</label><br>
+                        <input type="text" name="name" id="name" placeholder="Muktadir" required>     
+                    </div>
+                    <div class="formElement">
+                        <label for="email">Email:</label><br>
+                        <input type="email" name="email" id="email" placeholder="1996raiden27@gmail.com" required>
+                    </div>
+                    <span id="contact-me">Drop me a line!</span>
+                    <div class="messageArea">
+                        <textarea name="message" id="message" cols="5" rows="5">Enter your message</textarea>
+                    </div> 
+                    <div class="btnContainer">
+                        <button type="reset" id="reset" title="refresh"><i class="fa-sharp fa-solid fa-rotate-left"></i></button>                                                          
+                        <button type="submit" id="submit" title="send message">send</i></button>  
+                    </div>                                                                          
+                </form>
+            </div> -->
+          
+        </div>
+        <footer>
+            <div id="changeBackground">
+                <span>Set Background</span>
+                <div id="imageContainer">
+                    <div class="backgroundImage">
+                        <img  src="images/princess11.jpg" alt="image">
+                    </div>
+                    <div class="backgroundImage">
+                        <img src="images/princessAeolin01.jpg" alt="image">
+                    </div>
+                    <div class="backgroundImage">
+                        <img  src="images/princessYan02.jpg" alt="image">
+                    </div>
+                    <div class="backgroundImage">
+                        <img  src="images/princessYan03.jpg" alt="image">
+                    </div>
+                    <div class="backgroundImage">
+                        <img src="images/iceprincess20.jpg" alt="image">
+                    </div>
+                </div>
+            </div>
+           
+            <div id="contacts">
+                <span>My Contacts</span>
+                <a href="">
+                    <i class="fa-brands fa-linkedin fa-1x "></i>
+                </a> 
+                <a href="">                
+                    <i class="fa-brands fa-instagram fa-1x"></i>
+                </a>           
+                <a href="">
+                    <a href="https://www.facebook.com/" title="facebook">                                    
+                        <i class="fa-brands fa-facebook fa-1x"></i>      
+                    </a>    
+                </a>
+                <a href="">
+                    <i class="fa-brands fa-discord fa-1x"></i>
+                </a>   
+                <a href="">
+                    <i class="fa-brands fa-twitter fa-2x"></i>
+                </a>         
+           </div>
+        </footer>
+    </div> 
+    <script src="index.js"></script> 
+</body>
+</html>
