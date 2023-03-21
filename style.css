@@ -1,0 +1,890 @@
+* {
+    margin: 2px 2px;
+    margin-left: 2px;
+}
+:root {
+    --background-image: url();
+}
+html{
+    height: 100%;
+    scrollbar-width: none;  
+    --border: 1px solid white;  
+}
+
+.grid-parent-container{
+    margin: 2px 2px;
+    --border-radius: 2rem;   
+    box-shadow: -2px -2px 4px rgb(235, 200, 112);
+    height: 100vh;
+    display: grid;
+    column-gap: 2px;
+    row-gap: 2px;
+    grid-template-columns:repeat(3, 1fr) ;
+    grid-template-rows: repeat(9, 1fr);
+   
+}
+header:hover{
+    background-color: rgba(0,0,0,0.25);
+    box-shadow: 2px 4px 5px rgba(0,0,0,0.7);
+}
+header {
+    border-radius: 12px;
+    position: relative;
+    margin-top: 2px;
+    margin-left: 8px;
+    border-bottom: 2.5px solid rgb(177, 115, 15);
+    grid-column: span 2;  
+    grid-row: span ;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-Y: hidden;   
+}
+
+#home {
+    border: 1px solid rgb(245, 105, 24);
+    opacity: 0%;
+    position: relative;
+    padding: .25rem .25rem;
+    color: rgb(245, 105, 24);
+    background-color: rgba(0,0,0,0.25);  
+    border-radius: 12px;
+    transition: all 250ms ease-in-out;
+    animation: homeRotate 4s ease-out 500ms  forwards;
+    
+}
+
+@keyframes homeRotate{
+    0%{
+        opacity: 50%;
+        
+    }
+    100%{
+        transform: rotateZ(360deg);
+        opacity: 100%;
+    }
+}
+#home:hover{
+    color:  rgba(0,0,0,0.5);
+    background-color: rgb(241, 174, 17);
+    box-shadow:  2px 2px 2px cyan;
+    animation-play-state: paused;
+}
+
+
+.timer{ 
+    font-size: clamp(1.55rem, 2.75vw, 3rem);
+    position: relative;
+    margin-left: auto;
+    display: flex;
+    padding: .08rem .1rem;
+    gap: clamp(.1px, .5vw, .5px);
+    color: rgb(241, 174, 17);
+    text-shadow: -2px 3px 4px black;   
+}
+.timer span, #dayOrNight{
+    opacity: 0%;
+    color: none;
+    animation: opacityChange 2s ease-out alternate-reverse infinite 4s;
+}
+@keyframes opacityChange{
+    0%{ 
+        opacity: 25%;
+        color: rgba(255, 255, 255, 0.25);
+    }
+    100%{
+        opacity: 100%;
+        color: rgba(246, 246, 246, 0.5);
+    }
+}
+.timer div.number{  
+    display: none;
+    box-shadow: inset -2px 2px 6px rgba(0,0,0,0.7);
+    color: rgb(244, 171, 76); 
+    display: block;
+    position: relative;
+    border-radius: 4px;
+    background-color: rgba(0,0,0,0.25);
+    text-align: center;
+    padding: .125rem .25rem;
+    animation: timerAnimation 1s ease-in-out forwards paused ;
+}
+@keyframes timerAnimation{
+    0%{
+        transform: translateY(-100px) scale(0, 0);
+    }
+    100%{
+        transform: translatY(0) scale(1, 1);
+    }
+}
+#container2{ 
+    border: .5px solid rgba(236, 151, 40, 0.7);
+    position: relative;
+    margin-top: 1px;
+    border-radius: 4px;
+    display: grid;
+    grid-column: span;
+    grid-row: span 2;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    column-gap: .2rem;
+    transform: rotateX(90deg);
+    animation: container2 1.5s linear 1.5s forwards;
+} 
+@keyframes container2{
+    100%{
+        transform: rotateX(0deg);
+    }
+}
+.slideShow{
+    opacity:50%;
+    border-radius: 4px;
+    border: 2px solid rgb(171, 217, 217);
+    grid-column: 1/3;
+    grid-row: span 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.slideShow #bike{
+  
+    width: clamp(2.25rem, 18vw, 50rem);
+    height: 125px;
+}
+.box2{ 
+    opacity: 0%;
+    border-radius: 4px;
+    grid-column: 3/4;
+    grid-row: span 6;
+    display: grid;
+    grid-template-rows: repeat(11, 1fr); 
+    animation:box2Animation 4s linear 1s forwards ; 
+   
+}
+@keyframes box2Animation{
+    0%{
+        opacity: 25%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+.box2:hover{
+    background-color: rgba(0,0,0,0.25);
+    border-radius: 8px;
+    box-shadow: -3px 4px 5px rgba(0,0,0,0.7);
+}
+#profile-picBox{  
+    grid-column: span 2;
+    grid-row: span 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+.profilePic{  
+    width: clamp(40px, 4vw, 100px);   
+    border-radius: 50%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition:all 500ms ease-out;
+}
+#profile-picBox :hover{
+    transform: scale(1.15, 1.15);
+   box-shadow: inset -4px 4px 8px goldenrod;
+}
+#profilePicBox img{
+    object-fit: fill;
+}
+
+.nameBox{
+    grid-column: span 2;
+    grid-row: span 3;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.name{
+    box-shadow: -2px 2px 3px rgb(19, 27, 191);
+    text-shadow: -2px 2px 5px black;
+    width: fit-content;
+    font-family:  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    height: auto;
+    padding: .125rem .25rem;
+    text-align: center;
+    border-radius: .25rem;
+    font-size: clamp(.75rem, 1.25vw, 1.5rem);
+    color: rgb(243, 244, 246);
+    transition: all 500ms ease-out;
+   
+}
+.nameBox :hover.name{
+    transform: scale(1.05, 1.05);
+}
+
+#professionBox{ 
+    grid-column: span 2;
+    grid-row: span ;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+   
+}
+.programmer{
+    margin-top: 4px;
+    position: relative;
+    border-radius: .25rem; 
+    text-align: center;
+    padding: .2rem;
+    font-family: "Press Start 2P";
+    color: rgb(245, 245, 241);
+    text-shadow: -2px 4px 4px rgb(19, 19, 19), 3px 4px 2px rgb(243, 90, 20), -4px 4px 6px rgb(72, 138, 226);
+    font-size: clamp(.35rem, .75vw,1.2rem );
+}
+
+#container3{
+    margin: 12px 18px;
+    border-radius: 8px;   
+    grid-column: 1/3;
+    grid-row: span 7; 
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr); 
+    row-gap: 8px;
+    column-gap: 2px;
+}
+
+#toolbarBox{
+    overflow-y: hidden;
+    margin-left: 12px;
+    grid-column: span 5;
+    grid-row: span ;
+    transition: 1s ease-in-out;
+    padding: .125rem .25rem;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    column-gap: .5rem;
+    box-shadow: 4px 4px 4px rgba(228, 155, 29, 0.7);
+   
+}
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px; /* The height is only seen on horizontal scrolling */
+  }
+  
+:hover::-webkit-scrollbar-track {
+    background: rgba(248, 245, 245, 0.25);
+    padding: 2px;
+    border-radius: 4px;
+  }
+  
+::-webkit-scrollbar-thumb {
+    background-color: rgba(225, 113, 8, 0.5);
+    border-radius: 4px;
+  }
+#toolbarBox:hover{
+    background-color: rgba(0, 2, 5, 0.25);
+    box-shadow: 4px 4px 4px rgba(23, 113, 7, 0.5);
+}
+
+.wrapper {
+    transform:translate(200px) scale(0, 0) ;
+    position: relative;
+    display: flex;  
+    margin: 4px 4px; 
+    width: auto;
+    height: auto;  
+    animation: wrapperScale 3s ease-in-out 2s forwards;   
+}
+@keyframes wrapperScale{
+    100%{
+        transform: translate(0px) scale(1, 1) ;
+    }
+}
+.search-icon {
+    position: absolute;
+    top: 6px;
+    left: 3px;
+    width: 20px;
+    transition: 150ms linear;
+    opacity: 25%;
+    width: 20px;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    padding: .125rem .25rem;
+    background-color: black;
+    transition: 250ms ease-in-out;
+}
+.search-icon:hover{
+    opacity: 100%;
+    color: white;
+    background-color:green; 
+    transform: scale(1.1, 1.1);
+}
+
+.clear-icon {
+    opacity: 25%;
+    position: absolute;
+    top: 8px;
+    right: 3px;
+    width: 18px;
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: .07rem .15rem;
+    transition: 250ms ease-in;
+
+}
+.clear-icon:hover{
+    color: red;
+    background-color: white;
+    opacity: 90%;
+    transform: scale(.75, .75);
+}
+.wrapper .searchBar {  
+    border: 1px solid rgba(0, 2, 5, 0.7); 
+    color: rgb(242, 166, 16);
+    border-radius: 8px;
+    font-size: small;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    transition: 250ms linear;
+    background-color: rgba(0,0,0,0.25);
+    height: 1.95rem;
+    width:clamp(4rem, 20vw, 100rem) ;
+    padding: 2px 34px 2px 30px;
+    outline: 0;   
+    transition: 500ms ease-in-out;
+    box-shadow:  -2px -2px 1px rgb(226, 162, 44);
+}
+.wrapper:hover .searchBar{
+    box-shadow: none;
+    width: 32vw;
+    border: 2px solid rgb(234, 125, 16);
+    background-color: rgba(0,0,0,0.7);
+    opacity: 100%;
+    color: white; 
+}
+#toolbar{
+    opacity: 0%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: clamp(.75rem, 1.15vw, 4rem);
+    animation:  toolbarAnimation 1.5s ease-out 2s forwards; 
+}
+@keyframes toolbarAnimation{
+    0%{
+        opacity: 50%;
+        transform: translateX(300px);
+    }
+    100%{
+        opacity: 100%;
+        transform: translateX(0);
+    }
+}
+
+#toolbar *:hover {
+    background-color: rgba(36, 36, 36, 0.7);
+    transform: scale(1.05, 1.05);
+}
+.google{
+    background-color:transparent;
+    border-radius: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    transition: all 200ms ease-out;
+    overflow: hidden;
+}
+.google .fa-google{
+    color: rgb(10, 204, 78);
+    width: fit-content;
+    height: auto;
+    border-radius: .5rem;
+    object-fit: fill;
+}
+
+.youtube{
+    grid-column: span;
+    border-radius: .5rem;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 200ms ease-out;
+    overflow: hidden;
+}
+.youtube .fa-youtube{
+    color: rgb(220, 73, 10);
+    width: fit-content;
+    height: auto;
+    border-radius: .5rem;
+    
+}
+
+.amazon{
+    grid-column: span;
+    border-radius: .5rem;
+    background-color:transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 200ms ease-out;
+    overflow: hidden;
+}
+.amazon .fa-amazon{
+    color: rgb(227, 162, 22);
+    width: fit-content;
+    height: auto;
+    border-radius: .5rem;
+}
+
+#content{ 
+    animation: content 3s ease-in-out forwards;
+    transform: scale(0, 0);  
+    position: relative;
+    margin-left: 16px;  
+    grid-column: span 5;
+    grid-row: span 7;
+    border-radius: 3px; 
+    transition: all 2s ease-out;
+    scrollbar-width: 2px;
+    box-shadow: inset 4px 4px 5px rgba(33, 17, 1, 0.5);
+}
+@keyframes content{
+    100%{
+        transform: scale(1,1);
+    }
+}
+#content:hover{
+    background-image: url(images/princess01.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: 2.5px solid rgba(238, 173, 34, 0.7);
+}
+#myProjects{
+    font-family: "Permanent Marker", consolas, sans-serif;
+    margin-left: 8px;
+    color:white; 
+    font-size: clamp(1.25rem, 2vw, 2.5rem);
+    position: relative;
+    text-align: center;
+    padding: 5px;
+    border-radius: .25rem;
+    width: fit-content;
+    height: auto;
+    opacity: 100%;
+    text-shadow: -2px 0 2px rgb(14, 14, 14);
+} 
+
+#projectBox{
+    color: goldenrod;
+    position: relative;
+    margin-top: 12px;
+    margin-left: 8px;
+    display: grid;
+    grid-template-columns:repeat(auto-fill, minmax(75px, 100px));
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+.projects{
+    opacity: 50%;
+    width: 75px;
+    cursor: pointer;
+    color: rgba(237, 163, 60, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 2, 5, 0.5);
+    min-height: 75px;
+    border-radius: 8px;
+    border: 2px solid rgb(241, 174, 17);
+}
+.projects:hover{
+    border: 2px solid green ;
+    opacity: 100%;
+}
+.projects span{
+    font-size: .75rem;
+    font-family: "Permanent Marker", sans-serif;
+    color:rgb(241, 174, 17) ;
+    position: absolute;
+    align-self:last baseline ;
+}
+#box3{ 
+    grid-column: span 3;
+    grid-row: span 7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#box3 span{
+    text-shadow: 0 0 2px black;
+    color: rgb(247, 141, 11);
+    font-size: clamp(1.5rem, 2vw, 2.5em);
+}
+#box3 #restartBtn{
+    position: relative;
+    align-self: flex-start;
+    color: rgb(204, 100, 30);
+    border-radius: 6px;
+    padding: .5rem, .75rem;
+    cursor: pointer;
+    background-color: rgba(0, 2, 5, 0.25);
+}
+.cell{
+    width: 60px;
+    height: 60px;
+    border: 2px solid rgba(0,0,0,0.25);
+    box-shadow: 0 0 0 1px rgba(243, 104, 45, 0.7);
+    line-height: 60px;
+    font-size: 40px;
+    cursor: pointer;
+    color: white;
+}
+#cellContainer{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 200px;
+    margin:auto ;
+    text-align: center;
+   
+}
+#box3 #quitBtn{
+   margin-left: 50%;
+   color: rgb(204, 100, 30);
+   background-color: rgba(0, 2, 5, 0.25);
+   border-radius: 4px;
+   cursor: pointer;
+}
+#box3 #Btns{
+    margin-bottom: 6px;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+#ticTacToeGameContainer{
+    background-color: rgba(0,0,0,0.3);
+    padding: 12px 10px;
+    border-radius: 12px;
+    font-family: "Permanent Marker", cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
+}
+#container4{
+    row-gap: 4px;
+    text-align: center;
+    color: white;
+    transition: all 1.5s linear;
+    position: relative;
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: -4px -2px 4px rgba(170, 109, 52, 0.7);
+    grid-column: span ;
+    grid-row: span 6;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    transform: translateX(500px);
+    animation: container4 2s ease-in-out 2s forwards;
+}
+#container4 span{
+    align-self: center;
+    font-family: "Permanent Marker", sans-serif;
+    font-size: clamp(1rem, 3vw, 4rem);
+    text-shadow: 0 0 4px black;
+}
+
+#Container4 div::-webkit-scrollbar {
+    width: 4px;
+    height: 6px; /* The height is only seen on horizontal scrolling */
+  }
+  
+#Container4 div:hover::-webkit-scrollbar-track {
+    background: rgb(236, 240, 243);
+    padding: 2px;
+    border-radius: 4px;
+  }
+  
+#Container4 div:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 4px;
+  }
+#container4 div{
+    overflow-y: scroll;
+    position: relative;
+    border-radius: 2px;
+    margin: 4px 4px;
+    height: fit-content;
+}
+#container4 #mailPhone{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    color: rgb(250, 250, 248);
+    text-shadow: 0 0 2px black;
+    gap: 4px;
+}
+#container4 #mailPhone i{
+    color: rgba(238, 173, 34, 0.7);
+    text-shadow: 0 0 4px black;
+}
+
+#container4 div p{
+    transform: scale(.85, .85);
+    font-style: italic;
+    padding: .5rem, 1rem;
+    border-radius: 4px;
+    font-size: larger;
+    color: goldenrod;
+    opacity: 70%;
+    transition: .500s ease-in-out;
+}
+#container4 p:hover{
+    opacity: 100%;
+    transform: scale(1, 1);
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.3);
+    color: white;
+    text-shadow: 0 0 2px goldenrod;
+}
+#container4:hover{
+    background-color: rgba(0, 2, 5, 0.5);
+    border: 1.5px solid goldenrod;
+   
+}
+@keyframes container4 {
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+#formBox{
+    transform: scale(0, 0);
+    position: relative;
+    border-radius: 12px;
+    position: relative;
+    padding: .125rem .25rem;
+    background-color: rgba(11, 98, 238, 0.25);
+    font-size: clamp(.85rem, 1.25vw, 1.5rem);
+    border: 2.5px solid rgba(0,0,0,0.3);
+    box-shadow: -2px 2px 6px rgba(0, 2, 5, 0.7);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 10px;
+    padding-bottom:8px ;   
+    transition: 1s ease-in-out;
+}
+#formBox #contact-me{
+    text-align: center;
+    font-size:clamp(.5rem, 1.5vw, 2rem) ;
+    color: rgb(238, 190, 126);
+    text-shadow: -2px 2px 4px black;
+    padding: 0.125rem .25rem;
+}
+
+#formBox:hover{
+    opacity: 100%;
+}
+.messageArea:hover{
+    opacity: 100%;
+}
+input { 
+    margin-bottom: 10px; 
+}
+label{
+    font-family:sans-serif;
+    font-style: bold;
+    font-size: larger;
+}
+
+input#name:hover{
+    background-color: #fff;
+    border: 1px solid rgb(49, 163, 233);   
+}
+input#email:hover{
+    background-color: #fff;
+    border: 1px solid rgb(49, 163, 233);   
+}
+input#name{
+    width:clamp(.25rem, 16vw, 20rem);
+    border: 1px solid goldenrod;
+    border-radius: 4px;
+    padding: .125rem .5rem;
+    outline: 0;
+    background-color: #c8e7e7;
+    box-shadow: inset 2px 2px 4px rgba(0,0,0,0.5);
+}
+input#email{
+    width:clamp(.25rem, 16vw, 20rem);
+    border: 1px solid goldenrod;
+    border-radius: 4px;
+    padding: .125rem .5rem;
+    outline: 0;
+    background-color: #c8e7e7;
+    box-shadow: inset 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.messageArea{
+    opacity: 25%;
+}
+#formBox button{
+    border: none;
+    border-radius: 4px;
+    padding: .125rem .25rem;
+    outline: 0;
+    color: white;
+    box-shadow:inset 2px -4px 4px rgba(248, 245, 245, 0.7);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgba(98, 59, 240, 0.742);
+    transition: 250ms ease-out;
+
+}
+.btnContainer{
+    width:clamp(.25rem, 17vw, 20rem); 
+    height: 1.5rem;
+    display: grid; 
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+}
+#submit{
+    grid-column: 5/6;
+}
+#formBox button:hover{
+    background-color: rgb(235, 139, 44);
+    cursor: pointer;
+    text-shadow: -2px 2px 4px black;
+    box-shadow: -2px 2px 2px rgba(0, 2, 5, 0.5);
+    
+}
+footer{
+    opacity: 0%;  
+    border-radius: 8px;
+    position: relative;
+    margin-top: 4px;
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-row: auto;
+    animation: footerAnimation 2s linear 3s forwards;
+}
+@keyframes footerAnimation{
+    0%{
+        transform: translateY(80px);
+    }
+    100%{
+        opacity: 100%;
+        transform: translateY(0px) scale(.96, .85);
+    }
+}
+#changeBackground{
+    grid-column: span 2;
+    border-radius: 8px;
+    border-right: 1px solid rgb(241, 174, 17);
+   
+}
+#changeBackground:hover{
+    background-color: rgba(0, 2, 5, 0.25);
+}
+#imageContainer{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: hidden;
+    gap: 4px;
+    margin-left: 8px;
+    margin-top: 4px;
+}
+#imageContainer *:hover img{
+    opacity: 100%;
+    border-radius: 4px;
+    border-bottom: 2.5px solid rgb(230, 146, 21);
+    cursor: pointer;
+}
+#imageContainer img{
+    opacity: 50%;
+    border-bottom: 2.5px solid rgb(250, 248, 245);
+    transition: .25s ease-in-out;
+    border-radius: 4px;
+}
+
+#changeBackground span{
+    font-family: "Permanent Marker", sans-serif;
+    color: rgb(243, 248, 243);
+    position: relative;
+    margin-top: 2px;
+    margin-left: 2px;
+    text-shadow: 0px 0 2px rgb(15, 15, 15);
+}
+.backgroundImage *{
+    width: 60px;
+    height: 34px;
+  
+}
+#contacts{ 
+    border-radius: 8px;   
+    border-left: 1px solid rgb(223, 175, 85);
+    grid-column: 5/7; 
+    display: flex;
+    justify-content: flex-start;
+    align-items: first baseline;
+    flex-direction: row;
+    gap: 1px;
+}
+#contacts:hover{
+    background-color: rgba(0, 2, 5, 0.25);
+}
+#contacts *:not(:first-child){
+   align-self: center;
+   color: rgb(241, 174, 17);
+   background-color: rgba(0,0,0,0.25);
+   transform: scale(1.25,1.25);
+
+}
+#contacts *:not(:first-child):hover{
+    transition:transform 150ms ease-out ;
+    transform: translateY(-4px) scale(1.15, 1.15);
+    color: rgba(248, 248, 248, 0.7);
+    border-radius: 4px;
+    background-color:rgba(0, 2, 5, 0.25) ;
+}
+#contacts span{
+    font-size: medium;
+    align-self: flex-start;
+    font-family: "Permanent Marker",sans-serif;
+    color: rgb(250, 248, 244);
+    text-shadow: 0px 0 2px rgb(9, 9, 9);
+}
+
+
+
+
